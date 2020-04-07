@@ -12,7 +12,8 @@ class BooksController < ApplicationController
   end
 
   def create
-  	@book = Book.new(book_params) #Bookモデルのテーブルを使用しているのでbookコントローラで保存する。
+  	@book = Book.new(book_params)
+    @book.user = current_user
   	if @book.save #入力されたデータをdbに保存する。
       flash[:notice] = "successfully created book!"
   		redirect_to("/books")#保存された場合の移動先を指定。

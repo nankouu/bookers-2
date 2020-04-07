@@ -3,8 +3,7 @@ class UsersController < ApplicationController
 	before_action :baria_user, only: [:update]
 
   def show
-  	@user = User.find(params[:id])
-  	@books = @user.books
+  	@user = current_user
   	@book = Book.new #new bookの新規投稿で必要（保存処理はbookコントローラー側で実施）
   end
 

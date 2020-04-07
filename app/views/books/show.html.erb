@@ -16,10 +16,10 @@
 		<table class="table">
 				<tr>
 					<td>
-						<%= link_to("/users/#{@book.user.id}") do%>
+
                   <%= attachment_image_tag @book.user, :profile_image,:fill, 60,60, format: "jpeg",fallback:"no_image.jpg"%>
                   <%= @book.user.name %>
-                    <% end %>
+
 					</td>
 					<td><%= link_to @book.title, @book %></td>
 					<td><%= @book.body %></td>
